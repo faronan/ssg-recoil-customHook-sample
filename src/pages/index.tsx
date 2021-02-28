@@ -1,9 +1,17 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { db } from '../lib/firestore';
+import { useNewRecords, useRecords } from '../hooks/records';
 
 const Home = ({ results }) => {
-  console.log(results);
+  //console.log(results);
+  const [record, setRecord] = useRecords();
+  const newRecord = useNewRecords('巨人', '丸 佳浩', '2020-10-25');
+  if (newRecord) {
+    setRecord(newRecord);
+    console.log(record);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
