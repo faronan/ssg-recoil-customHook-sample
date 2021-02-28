@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function getRecords(
+export default async function getResults(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
